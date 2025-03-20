@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,7 +23,11 @@ namespace CaesarCypher
             string res = "";
             for (int i = 0; i < s.Length; i++)
             {
-                int keyShift = key[i % key.Length] - 'A';
+                //Vigenere Cipher
+                //int keyShift = key[i % key.Length] - 'A';
+
+                //Caesar Cipher
+                int keyShift = key[0] - 'A';
                 if (char.IsLower(s[i]))
                     res += (char)((s[i] - 'a' + keyShift) % 26 + 'a');
                 else if (char.IsUpper(s[i]))
@@ -37,13 +42,18 @@ namespace CaesarCypher
             string res = "";
             for (int i = 0; i < s.Length; i++)
             {
-                int keyShift = key[i % key.Length] - 'A';
+                //Vigenere Cipher
+                //int keyShift = key[i % key.Length] - 'A';
+
+                //Caesar Cipher
+                int keyShift = key[0] - 'A';
                 if (char.IsLower(s[i]))
                     res += (char)((s[i] - 'a' - keyShift + 26) % 26 + 'a');
                 else if (char.IsUpper(s[i]))
                     res += (char)((s[i] - 'A' - keyShift + 26) % 26 + 'A');
                 else
                     res += s[i];
+
             }
             return res;
         }
