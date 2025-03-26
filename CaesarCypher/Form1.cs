@@ -75,7 +75,7 @@ namespace CaesarCypher
             for (int i = 0; i < 26; i++)
             {
                 char key = (char)(i + 'A');
-                textBox3.Text += "Key: " + key + Environment.NewLine + Decrypt(textBox1.Text, key.ToString()) + Environment.NewLine;
+                textBox3.Text += "Key: " + key + "\r\n" + Decrypt(textBox1.Text, key.ToString()) + "\r\n";
             }
         }
     }
